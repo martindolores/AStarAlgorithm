@@ -26,7 +26,7 @@
             // Calculate the heuristic (h-score) for each vertex (distance from the vertex to the target)
             for (int i = 0; i < _totalVertices; i++)
             {
-                hScore[i] = CalculateHeuristic(graph, i, target);
+                hScore[i] = CalculateHeuristic(i, target);
             }
 
             // Add the source vertex to the open list with f-score (g-score + h-score)
@@ -75,7 +75,7 @@
         }
 
         // Calculate heuristic using straight-line distance (Euclidean distance) from the vertex to the target
-        private int CalculateHeuristic(int[,] graph, int vertex, int target)
+        private int CalculateHeuristic(int vertex, int target)
         {
             // Assuming each vertex has coordinates (x, y), calculate Euclidean distance
             // For simplicity, we'll use the Manhattan distance here as a heuristic
